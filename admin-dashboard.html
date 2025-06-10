@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard - Pekanbaru Explore</title>
+  <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white shadow-md p-6 flex flex-col">
+    <h2 class="text-xl font-semibold mb-6">Admin Dashboard</h2>
+    <nav class="flex flex-col space-y-3">
+      <a href="#tempat-wisata" class="text-gray-700 hover:text-indigo-600 font-medium">Tempat Wisata</a>
+      <a href="#galeri-media" class="text-gray-700 hover:text-indigo-600 font-medium">Galeri Media</a>
+      <a href="#acara-budaya" class="text-gray-700 hover:text-indigo-600 font-medium">Acara Budaya</a>
+      <a href="#kelola-pengguna" class="text-gray-700 hover:text-indigo-600 font-medium">Kelola Pengguna</a>
+      <a href="index.html" class="text-red-600 hover:text-red-800 font-semibold mt-auto">Logout</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-grow p-8 overflow-auto">
+    <!-- Tempat Wisata Section -->
+    <section id="tempat-wisata" class="mb-12">
+      <h3 class="text-2xl font-semibold mb-4">Tambah / Edit Tempat Wisata</h3>
+      <form class="bg-white p-6 rounded-md shadow space-y-4" novalidate>
+        <div>
+          <label for="place-name" class="block font-medium mb-1">Nama Tempat Wisata</label>
+          <input type="text" id="place-name" name="place-name" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+        <div>
+          <label for="place-description" class="block font-medium mb-1">Deskripsi</label>
+          <textarea id="place-description" name="place-description" rows="4" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+        </div>
+        <div>
+          <label for="place-location" class="block font-medium mb-1">Lokasi</label>
+          <input type="text" id="place-location" name="place-location" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+        <div>
+          <label for="place-image" class="block font-medium mb-1">Upload Gambar</label>
+          <input type="file" id="place-image" name="place-image" accept="image/*" class="w-full" />
+        </div>
+        <div class="flex space-x-4">
+          <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition">Simpan</button>
+          <button type="reset" class="bg-gray-300 text-gray-700 px-6 py-2 rounded-md hover:bg-gray-400 transition">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Galeri Media Section -->
+    <section id="galeri-media" class="mb-12">
+      <h3 class="text-2xl font-semibold mb-4">Tambah / Edit Galeri Media</h3>
+      <form class="bg-white p-6 rounded-md shadow space-y-4" novalidate>
+        <div>
+          <label for="media-upload" class="block font-medium mb-1">Upload Media (Gambar/Video)</label>
+          <input type="file" id="media-upload" name="media-upload" accept="image/*,video/*" class="w-full" />
+        </div>
+        <div>
+          <label for="media-caption" class="block font-medium mb-1">Keterangan</label>
+          <input type="text" id="media-caption" name="media-caption" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+        <div class="flex space-x-4">
+          <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition">Simpan</button>
+          <button type="reset" class="bg-gray-300 text-gray-700 px-6 py-2 rounded-md hover:bg-gray-400 transition">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Acara Budaya Section -->
+    <section id="acara-budaya" class="mb-12">
+      <h3 class="text-2xl font-semibold mb-4">Tambah / Edit Acara Budaya</h3>
+      <form class="bg-white p-6 rounded-md shadow space-y-4" novalidate>
+        <div>
+          <label for="event-name" class="block font-medium mb-1">Nama Acara</label>
+          <input type="text" id="event-name" name="event-name" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+        <div>
+          <label for="event-datetime" class="block font-medium mb-1">Tanggal & Waktu</label>
+          <input type="datetime-local" id="event-datetime" name="event-datetime" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+        <div>
+          <label for="event-description" class="block font-medium mb-1">Deskripsi</label>
+          <textarea id="event-description" name="event-description" rows="4" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+        </div>
+        <div>
+          <label for="event-image" class="block font-medium mb-1">Upload Poster</label>
+          <input type="file" id="event-image" name="event-image" accept="image/*" class="w-full" />
+        </div>
+        <div class="flex space-x-4">
+          <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition">Simpan</button>
+          <button type="reset" class="bg-gray-300 text-gray-700 px-6 py-2 rounded-md hover:bg-gray-400 transition">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Kelola Pengguna Section -->
+    <section id="kelola-pengguna" class="mb-12">
+      <h3 class="text-2xl font-semibold mb-4">Kelola Pengguna</h3>
+      <table class="min-w-full bg-white rounded-md shadow overflow-hidden">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="text-left py-3 px-4 font-medium text-gray-700">Nama</th>
+            <th class="text-left py-3 px-4 font-medium text-gray-700">Email</th>
+            <th class="text-left py-3 px-4 font-medium text-gray-700">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t border-gray-200">
+            <td class="py-3 px-4">User Example</td>
+            <td class="py-3 px-4">user@example.com</td>
+            <td class="py-3 px-4 space-x-2">
+              <button class="text-indigo-600 hover:underline">Edit</button>
+              <button class="text-red-600 hover:underline">Hapus</button>
+            </td>
+          </tr>
+          <!-- More user rows can be added here -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
